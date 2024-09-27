@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+.contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+
+}
+nav{
+    display: flex;
+}
+.oculto{
+    display: none;
+}

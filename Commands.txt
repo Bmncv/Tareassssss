@@ -1,0 +1,29 @@
+Commands
+
+git init		(inicio un repo)
+git status		(veo qué archivos están y cuales no)
+git add .		(agrego todos los archivos)
+git rm -m "name"	(remover un archivo) 
+git restore --staged name
+git commit		(interfaz para commit, sales con ESC + ZZ)
+git commit -m "name"	(name se usa para detallar el commit)
+git Branch  		(veo todas mis ramas)
+git Branch name 	(creo una rama con el nombre de name)
+git log 		(muestro todos los registros de log)
+git log --graph		(lo mismo que log pero muestra la rama)
+git checkout -b name	(lo que hace es un git branch + git switch, creo una nueva rama y me muevo para ahí)
+git branch -d name	(borro la rama, name seria el nombre de la rama)
+git branch -D name	(en caso de que hubiesen cosas sin guardar, me avisa y si quiero eliminar igual necesito gritarle con la mayuscula)
+
+git push 
+git push origin namerama
+
+git clone url (por ejemplo "git clone https://github.com/angular/angular", la url me hace copiarlo de forma privada)
+
+git pull origin master	(si tengo creado ya mi repo y alguien sube algo, con esto lo descargo en mi local, master es mi rama, origin el nombre que le di a mi pull)
+
+----------FORK---------
+Basicamente hacer fork es llevarte el repo, entras a un repo ajeno y con el fork te lo llevas para vos (esto desde github)
+
+
+git merge name   (uno las ramas, si tengo una rama pepe y una rama main, si me paro en main y pongo "git merge pepe" traigo todo lo de la rama pepe y lo unifico en main)
