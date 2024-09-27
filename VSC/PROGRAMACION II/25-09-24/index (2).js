@@ -33,53 +33,63 @@ const posts =[
 const postContainerHTML = document.querySelector('.posts')
 const renderizarPosts = (posts) => {
     postContainerHTML.innerHTML =''
- posts.forEach(post => {
+    posts.forEach(post => {
         postContainerHTML.innerHTML+=`
-        
-          <div>
-        <img src="${post.userImage}" width="50px">
         <div>
-            <span>${post.name}</span>
-            <span>${post.nickname}</span>
+            <img src="${post.userImage}" width="50px">
+            <div>
+                <span>${post.name}</span>
+                <span>${post.nickname}</span>
+            </div>
+            <span>${post.timestamp}</span>
+            <p>${post.content}</p>
+            <div>
+                <span>${post.likes} likes </span>
+                <span>${post.retweets} retweets</span>
+                <span>${post.comments} comments</span>
+            </div>
+            <hr>
         </div>
-        <span>${post.timestamp}</span>
-        <p>${post.content}</p>
-    </div>
-    <div>
-        <span>${post.likes} likes </span>
-        <span>${post.retweets} retweets</span>
-        <span>${post.comments}</span>
-    </div>  
-   
-    <hr>
         `
     })
 }
 renderizarPosts(posts);
-const saludar = () =>{console.log ('LUNES')
-
+const saludar = () =>{console.log ('hola')
 }
+/* Obtenemos el elemento click con id BTN y lo guardamos en una constante */
+const btnClick = document.getElementById('btn')
 
-// btnClick.addEventListener('recibe tipoevento', funcion); 
-//btnClick.addEventListener('click', saludar); 
+btnClick.addEventListener('focus', ( ) =>{                  
+    console.log('Se presiono el boton')
+})
 
+btnClick.addEventListener('click', ()=>{
+    console.log('Se presio el boton y se levanto el dedo')
+})
+                                                /* Buscar el timer */
+btnClick.addEventListener('dblclick', ()=>{
+    console.log('Se hizo doble click')
+})
 
-const contador = document.getElementById("contador");
-const suma = document.getElementById("suma");
-const resta = document.getElementById("resta");
+const search = document.getElementById('search')      // Agarro la id del input que es search y la guardo
+search.addEventListener('input', ()=>{                // Renderiza el posts con lo que escribí en el input
+    let valorDelInput = search.value.toLowerCase()
+    console.log(valorDelInput)
+    renderizarPosts(posts.filter(post => post.content.toLowerCase().includes(valorDelInput)))
+})
 
-let numero = 0;
-
+const contador = document.getElementById("contador");   //ID del numero
+const suma = document.getElementById("suma");           // ID del +
+const resta = document.getElementById("resta");         // ID del -
+let numero = 0;                                         // variable Contador
 suma.addEventListener("click", ()=> {
     numero = numero + 1
     contador.innerHTML = numero;
 })
-
 resta.addEventListener("click", ()=> {
     numero = numero - 1
     contador.innerHTML = numero;
 })
-
 
 const btnMenu = document.getElementById("btn-menu");
 const navbarHTML = document.getElementById("navbar");
